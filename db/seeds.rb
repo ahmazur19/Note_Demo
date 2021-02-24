@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+Note.destroy_all
+
+10.times do |i|
+	Note.create(name: Faker::GreekPhilosophers.name, note: Faker::GreekPhilosophers.quote)
+end
+
+puts "Notes size #{Note.all.size}"
